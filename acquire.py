@@ -171,3 +171,19 @@ def scrape_github_data() -> List[Dict[str, str]]:
 if __name__ == "__main__":
     data = scrape_github_data()
     json.dump(data, open("data.json", "w"), indent=1)
+    
+####################################################################################################################
+
+def acquire_microsoft():
+    '''
+    This is a simple function to acquire the microsoft github scraped data by calling the cached data
+    '''
+    
+    # call csv
+    df = pd.read_csv('microsoft_github.csv')
+    
+    # remove unnamed column
+    df = df.drop(columns = ['Unnamed: 0'])
+    
+    return df
+
