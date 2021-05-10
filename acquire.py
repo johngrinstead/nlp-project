@@ -186,5 +186,11 @@ def acquire_microsoft():
     # remove unnamed column
     df = df.drop(columns = ['Unnamed: 0'])
     
+    # remove nulls
+    df.dropna(inplace=True)
+    
+    # make boolean variable for is or is not Typescript
+    df['is_TypeScript'] = df.language == 'TypeScript'
+    
     return df
 

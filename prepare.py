@@ -10,6 +10,8 @@ import pandas as pd
 
 import acquire
 
+from sklearn.model_selection import train_test_split
+
 ###################################################################################################################
 
 def basic_clean(original):
@@ -139,6 +141,19 @@ def prepare_microsoft(content):
     final_content = remove_stopwords(lemmatized_content)
     
     return final_content
+
+###################################################################################################################
+
+def split(df, stratify_by=None):
+    """
+    3 way split for train, validate, and test datasets
+    To stratify, send in a column name
+    """
+    train, test = train_test_split(df, test_size=.2, random_state=319, stratify=df[stratify_by])
+    
+    train, validate = train_test_split(train, test_size=.3, random_state=319, stratify=train[stratify_by])
+    
+    return train, validate, test
 
 ###################################################################################################################
 
