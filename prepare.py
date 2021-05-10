@@ -124,20 +124,19 @@ def prepare_microsoft(content):
     - will tokenize the string and return the seperated words
     - will lemmatize the content
     - will remove standard English stopwords
-        - you can append or remove stopwords using external lists, if desired
     '''
     
     # run cleaning function
     clean_content = basic_clean(content)
     
     # run tokenize function
-    tokenized_content = prepare.tokenize(clean_content)
+    tokenized_content = tokenize(clean_content)
     
     # lemmatize content
     lemmatized_content = lemmatize(tokenized_content)
     
     # remove stopwords
-    final_content = remove_stopwords(lemmatized_content, append_stopword, append_stopword)
+    final_content = remove_stopwords(lemmatized_content)
     
     return final_content
 

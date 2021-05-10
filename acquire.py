@@ -10,6 +10,7 @@ After doing so, run it like this:
 
 To create the `data.json` file that contains the data.
 """
+import pandas as pd
 import os
 import json
 from typing import Dict, List, Optional, Union, cast
