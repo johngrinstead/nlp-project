@@ -6,7 +6,7 @@
 
 <h3> <a name="top"></a> Hi there 👋,</h3>
 
-Welcome to the README file for my NLP Githup Repp Project.
+Welcome to the README file for my NLP Githup Repo Project.
 
 In here, you will find expanded information on this project including goals, how we will be working through the pipeline and a data dictionary to help offer more insight to the variables that are being used.
 
